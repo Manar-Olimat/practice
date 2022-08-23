@@ -13,18 +13,58 @@
 // This function should use forEach to populate your grocery list based on the store's inventory.
 //  If the item is available, add it to your list. Return the final list.
 
+/*function createList(inventoryArr) {
+    const groceryList=new Array();
+    inventoryArr.forEach(element => {
+        if(element.available==true){
+            groceryList.push(element.name);
+        
+        // console.log(element);
+    }
+    });
+  return groceryList; 
+}
+
+const inventoryList=
+[
+  { name: 'apples', available: true },
+  { name: 'pears', available: true },
+  { name: 'oranges', available: false },
+  { name: 'bananas', available: true },
+  { name: 'blueberries', available: false }
+];
+console.log(createList(inventoryList)
+);
 
 
-
+*/
 // Q2:
-// Write a function that, given an array of numbers as input, uses map to return a new array where each element is either the string "even" or the string "odd", based on each value.
+// Write a function that, given an array of numbers as input, uses map to return a new array where each element is either 
+//the string "even" or the string "odd", based on each value.
 
 // If any element in the array is not a number, the resulting array should have the string "N/A" in its place.
 
 // For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
+// function mapping(e) {
+   
+// }
 
+// function evenOdd(numbersArray){
+//     const strArr=numbersArray.map((e)=>{
+//       if (isNaN(e)) {
+//         return 'N/A';
+//     }
+//     else if (e%2==0) {
+//         return 'even';
+//     }
+//     return 'odd';   
+//     });
+//     return strArr;
+// }
 
+// const arr=[1,2,3,4,'n'];
+// console.log(evenOdd(arr));
 
 
 // Q3:
@@ -34,7 +74,15 @@
 // For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 
+// function notInFirstArray(arr1,arr2) {
+//     const filteredArr= arr2.filter((e)=> !arr1.includes(e));
+//     return filteredArr;
+// }
 
+// const arr1=[1,2,3,7];
+// const arr2=[1,2,3,4,5];
+
+// console.log(notInFirstArray(arr1,arr2));
 
 
 // Q4:
@@ -42,6 +90,14 @@
 
 // Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 
+// function reversedString(str) {
+//     let revStr;
+    
+//     revStr=str.split('').reduce((prev,current)=>current+prev, '');
+//     return revStr;
+// }
+
+// console.log(reversedString(' hello hello hello'));
 
 
 
@@ -57,7 +113,19 @@
 // 'hello world' returns false
 
 
+// function isNum(input) {
+//     const regex=/\d/;
+//     if(regex.test(input)){
+//         return true;
+//     } 
+//     return false;
+    
+// }
 
+// console.log(isNum(123));
+// console.log(isNum('123'));
+// console.log(isNum('hel12llo'));
+// console.log(isNum('hello'));
 
 // Q6:
 // You have created a game application and begin by asking users an easy question: In which month is Halloween?
@@ -66,3 +134,19 @@
 // inputs: October, Oct, october, oct
 
 // If the user enters any of these four inputs, return true. For any other input, return false.
+
+
+function matchMonth(str) {
+    const regex=/oct|october/i;
+
+    if(regex.test(str)){
+                return true;
+            } 
+            return false;
+}
+
+console.log('In which month is Halloween?');
+console.log(matchMonth('oct'));
+console.log(matchMonth('Oct'));
+console.log(matchMonth('October'));
+console.log(matchMonth('october'));
